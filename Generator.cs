@@ -250,7 +250,7 @@ namespace Sudoku_Generator
             int numberOfSolutions = 0;
             int[,] firstSolution = new int[9, 9];
             int[,] secondSolution = new int[9, 9];
-            int[,] thierdSolution = new int[9, 9];
+            int[,] thirdSolution = new int[9, 9];
             int[,] originalBoard = new int[9, 9];
 
             Array.Copy(board, originalBoard, board.Length);
@@ -273,7 +273,7 @@ namespace Sudoku_Generator
                 else if (numberOfSolutions > 1)
                 {
                     SolveSudoku(board, ReversedAllowedDigits);
-                    Array.Copy(board, thierdSolution, board.Length);
+                    Array.Copy(board, thirdSolution, board.Length);
                 }
 
                 if (!CompareSolutions(firstSolution, secondSolution) && numberOfSolutions == 1)
@@ -281,7 +281,7 @@ namespace Sudoku_Generator
                     return false;
                 }
 
-                if (!CompareSolutions(firstSolution, thierdSolution) && numberOfSolutions == 2)
+                if (!CompareSolutions(firstSolution, thirdSolution) && numberOfSolutions == 2)
                 {
                     return false;
                 }
