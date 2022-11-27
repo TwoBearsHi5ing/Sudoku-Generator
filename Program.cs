@@ -13,4 +13,5 @@ generator.GenerateSudoku( emptySpaces, maxTimeToGenerate, maxTimeToSartAgain, te
 
 //generator.SolveSudoku(testArray, generator.AllowDigitsReadOnly);
 //generator.ShowBoard(testArray);
+Console.ReadKey();
 
