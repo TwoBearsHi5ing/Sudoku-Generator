@@ -18,17 +18,16 @@ namespace Sudoku_Generator
         #region Main Public Method Used To Generate Ready To Play Board
         public bool GenerateSudoku(int emptySpaces, float maxTimeToGenerate, float maxTimeToStartAgain, int[,] returningBoard = null)
         {
+            TotalTimeToGenerate += generatingWatch.ElapsedMilliseconds;
+            generatingWatch.Restart();
+
             Shuffle.ShuffleList(RandomizedAllowedDigits);
 
             int[,] board = new int[9, 9];
 
             int[,] originalBoard = new int[9, 9];
 
-            TotalTimeToGenerate += generatingWatch.ElapsedMilliseconds;
-            generatingWatch.Restart();
-
             GenerateValidBoard(originalBoard);
-            generatingWatch.Start();
 
             Array.Copy(originalBoard, board, originalBoard.Length);
 

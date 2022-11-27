@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Szymon_v2\\source\\repos\\Sudoku_Generator\\Sudoku_Generator.csproj": {}
+    "X:\\Na github\\SudokuGenerator\\Sudoku_Generator\\Sudoku_Generator.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Szymon_v2\\source\\repos\\Sudoku_Generator\\Sudoku_Generator.csproj": {
+    "X:\\Na github\\SudokuGenerator\\Sudoku_Generator\\Sudoku_Generator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Szymon_v2\\source\\repos\\Sudoku_Generator\\Sudoku_Generator.csproj",
+        "projectUniqueName": "X:\\Na github\\SudokuGenerator\\Sudoku_Generator\\Sudoku_Generator.csproj",
         "projectName": "Sudoku_Generator",
-        "projectPath": "C:\\Users\\Szymon_v2\\source\\repos\\Sudoku_Generator\\Sudoku_Generator.csproj",
+        "projectPath": "X:\\Na github\\SudokuGenerator\\Sudoku_Generator\\Sudoku_Generator.csproj",
         "packagesPath": "C:\\Users\\Szymon_v2\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Szymon_v2\\source\\repos\\Sudoku_Generator\\obj\\",
+        "outputPath": "X:\\Na github\\SudokuGenerator\\Sudoku_Generator\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Szymon_v2\\AppData\\Roaming\\NuGet\\NuGet.Config",
