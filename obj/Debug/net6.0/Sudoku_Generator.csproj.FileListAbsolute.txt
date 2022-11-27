@@ -1,0 +1,15 @@
+C:\Users\Szymon_v2\source\repos\Sudoku_Generator\bin\Debug\net6.0\Sudoku_Generator.exe
+C:\Users\Szymon_v2\source\repos\Sudoku_Generator\bin\Debug\net6.0\Sudoku_Generator.deps.json
+C:\Users\Szymon_v2\source\repos\Sudoku_Generator\bin\Debug\net6.0\Sudoku_Generator.runtimeconfig.json
+C:\Users\Szymon_v2\source\repos\Sudoku_Generator\bin\Debug\net6.0\Sudoku_Generator.dll
+C:\Users\Szymon_v2\source\repos\Sudoku_Generator\bin\Debug\net6.0\Sudoku_Generator.pdb
+C:\Users\Szymon_v2\source\repos\Sudoku_Generator\obj\Debug\net6.0\Sudoku_Generator.csproj.AssemblyReference.cache
+C:\Users\Szymon_v2\source\repos\Sudoku_Generator\obj\Debug\net6.0\Sudoku_Generator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Szymon_v2\source\repos\Sudoku_Generator\obj\Debug\net6.0\Sudoku_Generator.AssemblyInfoInputs.cache
+C:\Users\Szymon_v2\source\repos\Sudoku_Generator\obj\Debug\net6.0\Sudoku_Generator.AssemblyInfo.cs
+C:\Users\Szymon_v2\source\repos\Sudoku_Generator\obj\Debug\net6.0\Sudoku_Generator.csproj.CoreCompileInputs.cache
+C:\Users\Szymon_v2\source\repos\Sudoku_Generator\obj\Debug\net6.0\Sudoku_Generator.dll
+C:\Users\Szymon_v2\source\repos\Sudoku_Generator\obj\Debug\net6.0\refint\Sudoku_Generator.dll
+C:\Users\Szymon_v2\source\repos\Sudoku_Generator\obj\Debug\net6.0\Sudoku_Generator.pdb
+C:\Users\Szymon_v2\source\repos\Sudoku_Generator\obj\Debug\net6.0\Sudoku_Generator.genruntimeconfig.cache
+C:\Users\Szymon_v2\source\repos\Sudoku_Generator\obj\Debug\net6.0\ref\Sudoku_Generator.dll
