@@ -2,7 +2,7 @@
 {
     static public class Shuffle
     {
-        static Random random = new Random();
+        public static Random random = new Random();
         public static void ShuffleList<T>(this IList<T> list)
         {
             int n = list.Count;
@@ -15,5 +15,6 @@
                 list[n] = value;
             }
         }
+        
     }
 }
