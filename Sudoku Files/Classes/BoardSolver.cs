@@ -14,9 +14,24 @@ namespace Sudoku_Generator
         {
             _rulesChecker = rulesChecker;
         }
+        
 
         #region Soliving Given Board
-        private bool SolveOneCell(int y, int x, int[,] board, IList<int> Numbers)
+        public bool SolveSudoku(int[,] board, List<int> numbersToWrite)
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    if (board[i, j] == 0)
+                    {
+                        return SolveOneCell(i, j, board, numbersToWrite);
+                    }
+                }
+            }
+            return true;
+        }
+        private bool SolveOneCell(int y, int x, int[,] board, List<int> Numbers)
         {
             foreach (int n in Numbers)
             {
@@ -31,21 +46,6 @@ namespace Sudoku_Generator
             }
             board[y, x] = 0;
             return false;
-        }
-        public bool SolveSudoku(int[,] board, IList<int> numbersToWrite)
-        {
-            for (int i = 0; i < 9; i++)
-            {
-                for (int j = 0; j < 9; j++)
-                {
-                    if (board[i, j] == 0)
-                    {
-                        return SolveOneCell(i, j, board, numbersToWrite);
-                    }
-                }
-            }
-
-            return true;
         }
         #endregion
     }

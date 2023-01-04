@@ -8,25 +8,26 @@ namespace Sudoku_Generator
 {
     internal class SolutionChecker : ISolutionChecker
     {
-        private List<int> allowedDigits = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-        private List<int> ReversedAllowedDigits = new List<int> { 9, 8, 7, 6, 5, 4, 3, 2, 1 };
-        private List<int> RandomizedAllowedDigits = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+       
 
         private readonly IBoardSolver _solver;
 
         public SolutionChecker(IBoardSolver solver)
         {
-            _solver = solver;
-            Shuffle.ShuffleList(RandomizedAllowedDigits);
+            _solver = solver;        
         }
 
-        public bool CheckNumberOfSolutions(int[,] board)
+        // returns true if number of solutions = 1
+        public bool CheckNumberOfSolutions(int[,] board, List<int> allowedNumbers)
         {
             int numberOfTries = 0;
             int[,] firstSolution = new int[9, 9];
             int[,] secondSolution = new int[9, 9];
             int[,] thirdSolution = new int[9, 9];
             int[,] originalBoard = new int[9, 9];
+
+            var ascendingList = allowedNumbers.OrderBy(x => x).ToList();
+            var DescendingList = allowedNumbers.OrderByDescending(x => x).ToList();
 
             Array.Copy(board, originalBoard, board.Length);
             while (numberOfTries < 3)
@@ -35,19 +36,19 @@ namespace Sudoku_Generator
 
                 if (numberOfTries == 0)
                 {
-                    _solver.SolveSudoku(board, RandomizedAllowedDigits);
+                    _solver.SolveSudoku(board, allowedNumbers);
                     Array.Copy(board, firstSolution, board.Length);
                 }
 
                 else if (numberOfTries == 1)
                 {
-                    _solver.SolveSudoku(board, allowedDigits);
+                    _solver.SolveSudoku(board, ascendingList);
                     Array.Copy(board, secondSolution, board.Length);
                 }
 
                 else if (numberOfTries > 1)
                 {
-                    _solver.SolveSudoku(board, ReversedAllowedDigits);
+                    _solver.SolveSudoku(board, DescendingList);
                     Array.Copy(board, thirdSolution, board.Length);
                 }
 

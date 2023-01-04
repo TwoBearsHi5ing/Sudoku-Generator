@@ -17,7 +17,7 @@ namespace Sudoku_Generator
         }
 
         #region Removing Digits To Ready The Board
-        public bool RemovingDigits(int[,] board, int[,] originalSolution, int emptySpaces, float maxTimeToRemove)
+        public bool RemovingDigits(int[,] board, int[,] originalSolution, int emptySpaces, float maxTimeToRemove, List<int> allowedNumbers)
         {
             int[,] backup = new int[9, 9];
 
@@ -45,7 +45,7 @@ namespace Sudoku_Generator
                 number = board[i, j];
                 backup[i, j] = 0;
 
-                if (_solutionChecker.CheckNumberOfSolutions(backup))
+                if (_solutionChecker.CheckNumberOfSolutions(backup, allowedNumbers))
                 {
                     board[i, j] = 0;
                 }

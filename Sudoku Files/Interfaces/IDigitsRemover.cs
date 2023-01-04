@@ -2,6 +2,6 @@
 {
     internal interface IDigitsRemover
     {
-        bool RemovingDigits(int[,] board, int[,] originalSolution, int emptySpaces, float maxTimeToRemove);
+        bool RemovingDigits(int[,] board, int[,] originalSolution, int emptySpaces, float maxTimeToRemove, List<int> allowedNumbers);
     }
 }

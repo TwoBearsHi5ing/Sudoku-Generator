@@ -7,16 +7,18 @@ namespace Sudoku_Generator
         private Stopwatch generatingWatch = new Stopwatch();
 
         private readonly IBoardDisplay _displayer;
-        private readonly IFilledBoardGenerator _filledBoardGenerator;
+        private readonly IBoardSolver _solver;
         private readonly IDigitsRemover _digitsRemover;
+
+        private List<int> RandomizedAllowedDigits = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
         private float TotalTimeToGenerate;
 
-        public ReadyToPlayBoardGenerator(IBoardDisplay displayer, IFilledBoardGenerator filledBoardGenerator, IDigitsRemover digitsRemover)
+        public ReadyToPlayBoardGenerator(IBoardDisplay displayer, IBoardSolver solver, IDigitsRemover digitsRemover)
         {
             _displayer = displayer;
-            _filledBoardGenerator = filledBoardGenerator;
             _digitsRemover = digitsRemover;
+            _solver = solver;
         }
 
         #region Main Method Used To Generate Ready To Play Board
@@ -29,11 +31,13 @@ namespace Sudoku_Generator
 
             int[,] originalBoard = new int[9, 9];
 
-            _filledBoardGenerator.GenerateValidBoard(originalBoard);
+            Shuffle.ShuffleList(RandomizedAllowedDigits);
+
+            _solver.SolveSudoku(originalBoard, RandomizedAllowedDigits);
 
             Array.Copy(originalBoard, board, originalBoard.Length);
 
-            while (!_digitsRemover.RemovingDigits(board, originalBoard, emptySpaces, maxTimeToEmptyBoard))
+            while (!_digitsRemover.RemovingDigits(board, originalBoard, emptySpaces, maxTimeToEmptyBoard, RandomizedAllowedDigits))
             {
                 if (generatingWatch.ElapsedMilliseconds > maxTimeToStartAgain)
                 {
